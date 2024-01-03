@@ -1,0 +1,116 @@
+html,
+body {
+    background-image: url('../images/02/bg.png');
+    background-color: #f2f3f4;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+figcaption {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+h2,
+h3,
+h4,
+h5 {
+    color: #1E8BB0;
+}
+
+.borda {
+    border: 1px solid #1E8BB0;
+    border-radius: 8px;
+}
+
+li {
+    list-style-image: url(../images/02/icn_eye.svg);
+}
+
+.separador1 {
+    width: 70%;
+    height: 70%;
+    padding: 2px 0px 2px 0px;
+    gap: 10px;
+    background: #F5CA2E;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.separador2 {
+    width: 60%;
+    height: 60%;
+    padding: 1px 0px 1px 0px;
+    background: #000000;
+    border: 1px solid #000000;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+
+.voltar {
+    width: 174px;
+    height: 39px;
+    padding: 10px;
+    border-radius: 4px;
+    gap: 10px;
+    font-weight: bold;
+    color: #000 !important;
+    background: #F5CA2E;
+    border: 1px solid #F5CA2E;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.btn-final {
+    text-align: center;
+}
+
+.exemplo {
+    border: 1px solid #1E8BB0;
+    width: 80%;
+    height: 80%;
+    top: 3262px;
+    left: 428px;
+    border-radius: 4px;
+    margin: auto;
+    padding: 30px;
+    box-shadow: 7px 7px 0px -1px #F5CA2E;
+    -webkit-box-shadow: 7px 7px 0px -1px #F5CA2E;
+    -moz-box-shadow: 7px 7px 0px -1px #F5CA2E;
+}
+
+.exemplo1 {
+    width: 80%;
+    height: 80%;
+    top: 2875px;
+    left: 386px;
+    margin: auto;
+    margin-bottom: 60px;
+    padding: 30px;
+    border-radius: 8px;
+    background: #FFFFFF;
+    border: 1px solid #1E8BB0;
+
+}
+
+.icone-importante {
+    background-image: url(../images/02/icn_importante.png);
+}
+
+.caixa-destaque {
+    background-color: #F5CA2E;
+}
+
+@media only screen and (max-width: 430px){
+    html, body {
+        background-image: unset;}
+
+  }
+    

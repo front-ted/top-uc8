@@ -1,0 +1,81 @@
+html,body {
+    background: url('../images/01/bg-esq-dir.png') left center no-repeat, url('../images/01/bg-esq-dir.png') right center no-repeat;
+    background-color: #f2f3f4;
+    background-attachment: fixed;
+    background-repeat:no-repeat;
+    background-size: 47%, 47%;
+}
+
+figcaption {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+h2,
+h3,
+h4,
+h5 {
+    color: #1E8BB0;
+}
+
+.btn-simulador {
+    background-color: #3b90b5;
+    color: #fff !important;
+    font-size: 18px;
+    padding: 15px 30px;
+    box-shadow: -4px 4px  #12eddc;
+    margin: 40px auto;
+    display: block;
+    max-width: 450px;
+}
+a {
+    text-decoration: none !important;
+}
+
+a:hover{text-decoration: none;}
+
+
+.separador1 {
+    width: 70%;
+    height: 70%;
+    padding: 2px 0px 2px 0px;
+    gap: 10px;
+    background: #F5CA2E;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+
+.espera {
+    width: 750px;
+    height: 451px;
+    top: 835px;
+    left: 345px;
+    border-radius: 8px;
+    border: 1px;
+    margin: auto;
+    background: linear-gradient(0deg, #DFDFDF, #DFDFDF),
+    linear-gradient(0deg, #E4E4E4, #E4E4E4);
+    border: 1px solid #DFDFDF
+}
+
+.voltar {
+    width: 174px;
+    height: 39px;
+    padding: 10px;
+    border-radius: 4px;
+    gap: 10px;
+    font-weight: bold;
+    color: #000 !important;
+    background: #F5CA2E;
+    border: 1px solid #F5CA2E;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.btn-final {
+    text-align: center;
+}

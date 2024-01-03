@@ -1,0 +1,18 @@
+html,
+body {
+    background-image: url('../images/04/bg.png');
+    background-color: #f2f3f4;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+p{
+    word-wrap: break-word;
+}
+h2,
+h3,
+h4,
+h5 {
+    color: #1E8BB0;
+}
