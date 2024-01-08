@@ -83,6 +83,7 @@ table.senac th{
 	border-color:#dedede;
 }
 table.senac td{
+	text-align: center;
 	background-color:#fefefe;
 	color:#333;
 	border-color:#dedede;
