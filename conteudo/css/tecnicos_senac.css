@@ -270,7 +270,7 @@ header.senac{
 	padding-left:60px;
 	padding-right:60px;
 	background-color:#fff;
-	border-radius:10px;
+	/* border-radius:50%; */
 	margin-bottom:2em;
 	border-bottom:3px solid #ccc;
 	padding-top:100px;
