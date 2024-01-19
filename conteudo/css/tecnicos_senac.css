@@ -17,6 +17,18 @@ blockquote{
     margin: 3px;
 }
 
+/* .seloPresencialidade{ position: relative;} */
+.seloPresencialidade::before{
+	content: '';
+	position: absolute;
+	background-image: url('../images/04_05/selo-presencialidade.png');
+	background-size: cover;
+	margin-left: -110px;
+	margin-top: 50px;
+	width: 120px;
+	height: 120px;
+}
+	
 
 .jornal > p{
 	font-family:inherit;

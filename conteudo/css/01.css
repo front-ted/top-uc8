@@ -12,7 +12,7 @@ html,body {
     background-image: url('../images/02/bg.jpg');
 }
 .conteudo45{
-    background-image: url('../images/04_05/textura.png');
+    background-image: url('../images/04_05/bg_pdf.png');
     background-size: auto;
     background-repeat: repeat;
 }
@@ -121,3 +121,55 @@ a:hover{text-decoration: none;}
 .btHipermetropia:hover{ background-image: url('../images/03/bt-hipermetropia_hv.png');}
 .btAstigmatismo:hover{ background-image: url('../images/03/bt-astigmatismo_hv.png');}
 .btPresbiopia:hover{ background-image: url('../images/03/bt-presbiopia_hv.png');}
+
+.btnPopOlho1, .btnPopOlho2, .btnPopOlho3, .btnPopOlho4, .btnPopOlho5{
+    position: absolute;
+    right: 0;
+    color: transparent;
+    border: none;
+    background-color: #fff;
+    transition: all 0.3 ease-in;
+
+}
+.btnPopOlho1:hover, .btnPopOlho2:hover, .btnPopOlho3:hover, .btnPopOlho4:hover, .btnPopOlho5:hover,
+.btnPopOlho1:focus, .btnPopOlho2:focus, .btnPopOlho3:focus, .btnPopOlho4:focus, .btnPopOlho5:focus{
+    color: #fff;
+    background-color: #29afb2;
+    font-weight: bold;
+}
+.btnPopOlho1{
+    top: 6%;
+    width: 151px;
+  background-color: transparent;
+  right: 22px;
+  height: 43px;
+}
+.btnPopOlho2{
+    top: 92px;
+    width: 151px;
+    background-color: transparent;
+    right: 22px;
+    height: 65px;
+}
+.btnPopOlho3{
+    top: 36%;
+    width: 151px;
+  background-color: transparent;
+  right: 22px;
+  height: 43px;
+}
+.btnPopOlho4{
+    top: 392px;
+    width: 151px;
+    background-color: transparent;
+    right: 22px;
+    height: 65px;
+}
+.btnPopOlho5{
+    top: 80%;
+    width: 151px;
+  background-color: transparent;
+  right: 22px;
+  height: 43px;
+    
+}
