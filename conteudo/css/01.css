@@ -122,17 +122,17 @@ a:hover{text-decoration: none;}
 .btAstigmatismo:hover{ background-image: url('../images/03/bt-astigmatismo_hv.png');}
 .btPresbiopia:hover{ background-image: url('../images/03/bt-presbiopia_hv.png');}
 
-.btnPopOlho1, .btnPopOlho2, .btnPopOlho3, .btnPopOlho4, .btnPopOlho5{
+.btnPopDefault{
     position: absolute;
     right: 0;
     color: transparent;
     border: none;
-    background-color: #fff;
+    background-color: transparent;
     transition: all 0.3 ease-in;
 
 }
-.btnPopOlho1:hover, .btnPopOlho2:hover, .btnPopOlho3:hover, .btnPopOlho4:hover, .btnPopOlho5:hover,
-.btnPopOlho1:focus, .btnPopOlho2:focus, .btnPopOlho3:focus, .btnPopOlho4:focus, .btnPopOlho5:focus{
+.btnPopDefault:hover,
+.btnPopDefault:focus{
     color: #fff;
     background-color: #29afb2;
     font-weight: bold;
@@ -140,36 +140,93 @@ a:hover{text-decoration: none;}
 .btnPopOlho1{
     top: 6%;
     width: 151px;
-  background-color: transparent;
   right: 22px;
   height: 43px;
 }
 .btnPopOlho2{
     top: 92px;
     width: 151px;
-    background-color: transparent;
     right: 22px;
     height: 65px;
 }
 .btnPopOlho3{
     top: 36%;
     width: 151px;
-  background-color: transparent;
   right: 22px;
   height: 43px;
 }
 .btnPopOlho4{
     top: 392px;
     width: 151px;
-    background-color: transparent;
     right: 22px;
     height: 65px;
 }
 .btnPopOlho5{
     top: 80%;
     width: 151px;
-  background-color: transparent;
   right: 22px;
   height: 43px;
     
+}
+.btnPopOlho6{
+    top: 30px;
+    width: 153px;
+    left: 177px;
+    height: 39px;
+    font-size: 20px;
+    padding-top: 6px;
+}
+.btnPopOlho7{
+    top: 322px;
+    width: 146px;
+    left: 242px;
+    height: 40px;
+    font-size: 20px;
+    padding-top: 6px;
+}
+.btnPopOlho8{
+    top: 170px;
+    width: 135px;
+    left: 446px;
+    height: 40px;
+    font-size: 19px;
+    padding-top: 6px;
+}
+.btnPopOlho9{
+    top: 171px;
+    width: 152px;
+    left: 24px;
+    height: 39px;
+    font-size: 20px;
+    padding-top: 6px;
+}
+.btnPopOlho10{
+    top: 81px;
+    width: 180px;
+    left: 406px;
+    height: 40px;
+    font-size: 19px;
+    padding-top: 6px;
+}
+.btnPopOlho11{
+    top: 259px;
+    width: 180px;
+    left: 13px;
+    height: 39px;
+    font-size: 20px;
+    padding-top: 6px;
+}
+.popMobile{
+    display: none;
+}
+@media (max-width: 991px) {
+    .btnPopOlho1, .btnPopOlho2, .btnPopOlho3, .btnPopOlho4, .btnPopOlho5{
+        display: none;
+    }
+    .popMobile{
+        display: block;
+    }
+    .hideMob{
+        display: none;
+    }
 }
