@@ -1,11 +1,20 @@
 html,body {
     /* background: url('../images/01/bg-esq-dir.png') left center no-repeat, url('../images/01/bg-esq-dir.png') right center no-repeat; */
-    background-image: url('../images/01/bg.jpg');
     background-size: cover;
-    background-color: #f2f3f4;
     background-attachment: fixed;
     background-repeat:no-repeat;
     /* background-size: 47%, 47%; */
+}
+.conteudo1{
+    background-image: url('../images/01/bg.jpg');
+}
+.conteudo2{
+    background-image: url('../images/02/bg.jpg');
+}
+.conteudo45{
+    background-image: url('../images/04_05/textura.png');
+    background-size: auto;
+    background-repeat: repeat;
 }
 .booklet{
 
@@ -39,6 +48,15 @@ a {
 
 a:hover{text-decoration: none;}
 
+.conteudo45 h4{
+    background-color: #28aaad;
+  color: #fff;
+  padding: 10px;
+}
+.imagemFloatR{
+    float: right;
+    padding: 20px 30px;
+}
 
 .separador1 {
     width: 70%;
