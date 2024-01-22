@@ -249,7 +249,9 @@ ul.nav.nav-tabs{ margin-left: 0; }
     background-color: #f4f4f4 !important;
     color: #50D7E2 !important;
 }
-
+.legenda{
+    font-size: 12px;
+}
 @media (max-width: 1366px) {
     .layerConteudo{
         width: 50%;

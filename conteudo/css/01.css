@@ -228,8 +228,22 @@ a:hover{text-decoration: none;}
     display: none;
 }
 
-
-
+.moldura img{
+    filter: drop-shadow(#333 1px 3px 3px);
+}
+.moldura figcaption, .legenda{
+    font-size: 12px;
+}
+h4.seloPresencialidade{position: relative;}
+    h4.seloPresencialidade::before {
+        right: 0;
+        margin-right: -50px;
+        margin-top: -50px;
+        width: 110px;
+        z-index: 1;
+        height: 110px;
+    }
+}
 @media (max-width: 1200px) {
     .btnPopOlho1{
         top: 35px;
