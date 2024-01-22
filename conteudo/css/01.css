@@ -122,6 +122,9 @@ a:hover{text-decoration: none;}
 .btAstigmatismo:hover{ background-image: url('../images/03/bt-astigmatismo_hv.png');}
 .btPresbiopia:hover{ background-image: url('../images/03/bt-presbiopia_hv.png');}
 
+.boxbtnPop{
+    position: relative; width: 630px; margin: 0 auto;
+}
 .btnPopDefault{
     position: absolute;
     right: 0;
@@ -129,6 +132,10 @@ a:hover{text-decoration: none;}
     border: none;
     background-color: transparent;
     transition: all 0.3 ease-in;
+    color: #29afb2;
+    border: 1px solid #29afb2;
+    background-color: #fff;
+    outline: none !important;
 
 }
 .btnPopDefault:hover,
@@ -136,36 +143,37 @@ a:hover{text-decoration: none;}
     color: #fff;
     background-color: #29afb2;
     font-weight: bold;
+    border-color: #29afb2 !important;
 }
 .btnPopOlho1{
-    top: 6%;
-    width: 151px;
+    top: 33px;
+    width: 156px;
   right: 22px;
-  height: 43px;
+  height: 47px;
 }
 .btnPopOlho2{
-    top: 92px;
-    width: 151px;
+    top: 91px;
+    width: 156px;
     right: 22px;
-    height: 65px;
+    height: 67px;
 }
 .btnPopOlho3{
-    top: 36%;
-    width: 151px;
+    top: 214px;
+    width: 156px;
   right: 22px;
-  height: 43px;
+  height: 47px;
 }
 .btnPopOlho4{
     top: 392px;
-    width: 151px;
+    width: 156px;
     right: 22px;
-    height: 65px;
+    height: 72px;
 }
 .btnPopOlho5{
-    top: 80%;
-    width: 151px;
+    top: 476px;
+    width: 156px;
   right: 22px;
-  height: 43px;
+  height: 47px;
     
 }
 .btnPopOlho6{
@@ -216,8 +224,22 @@ a:hover{text-decoration: none;}
     font-size: 20px;
     padding-top: 6px;
 }
-.popMobile{
+.popMobile,.popMobile2{
     display: none;
+}
+
+
+
+@media (max-width: 1200px) {
+    .btnPopOlho1{
+        top: 35px;
+    }
+    .btnPopOlho4{
+        top: 389px;
+    }
+    .btnPopOlho5{
+        top: 469px;
+    }
 }
 @media (max-width: 991px) {
     .btnPopOlho1, .btnPopOlho2, .btnPopOlho3, .btnPopOlho4, .btnPopOlho5{
@@ -229,4 +251,13 @@ a:hover{text-decoration: none;}
     .hideMob{
         display: none;
     }
+}
+@media (max-width: 720px) {
+    .textBtnPop, .btnPopOlho6, .btnPopOlho7, .btnPopOlho8, .btnPopOlho9, .btnPopOlho10, .btnPopOlho11{
+        display: none;
+    }
+    .popMobile2{
+        display: block;
+    }
+    .boxbtnPop{width: 100%;}
 }
