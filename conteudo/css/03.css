@@ -14,7 +14,7 @@ h5 {
     color: #fff;
     margin-left: -25px;
 }
-.espera {
+.espera {    max-width: 100%;
     width: 750px;
     height: 451px;
     border-radius: 8px;

@@ -115,8 +115,11 @@ figcaption{
 /* FIM-/CLASSE PARA EXIBIR ELEMENTO APENAS NA IMPRESSÃO */
 
 
+a, .panel-title, h3{color: #000 !important;}
 @media print { /* INICIALIZA A MEDIA QUERY PRINT */
   /* CONFIGURAÇÃO DO DOCUMENTO */
+  
+a, .panel-title, h3{color: #000 !important;}
   html, body {
     height: 100%;
     padding-left: unset;

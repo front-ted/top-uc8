@@ -70,7 +70,7 @@ a:hover{text-decoration: none;}
 }
 
 
-.espera {
+.espera {    max-width: 100%;
     width: 750px;
     height: 451px;
     top: 835px;
