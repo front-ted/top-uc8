@@ -243,6 +243,10 @@ h4.seloPresencialidade{position: relative;}
         z-index: 1;
         height: 110px;
     }
+
+
+.selocentral:before{
+    margin-left: 0 !important;
 }
 @media (max-width: 1200px) {
     .btnPopOlho1{
