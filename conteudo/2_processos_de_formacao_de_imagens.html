@@ -96,11 +96,103 @@
         <p class="no-print">
           Explore o recurso a seguir e aprofunde ainda mais os seus conhecimentos sobre os processos de formação de imagens no sistema visual: poder refrativo do globo ocular. 
         </p>
-        <div class="espera seloPresencialidade">
+        <div class="seloPresencialidade">
 
+            <style>
+              .gifs img {
+                max-width: 500px;
+                width: 100%;
+                margin: auto;
+                position: relative;
+                display: block;
+              }
+              .botoes {
+                display: grid;
+                grid-template-columns: auto auto auto auto auto;
+                padding: 10px;
+              }
+              .botoes button {
+                margin: 10px;
+                text-align: center;
+              }
+
+              @media only screen and (max-width: 991px){
+                .botoes {
+                  display: grid;
+                  grid-template-columns: auto auto;
+                  padding: 10px;
+                }
+              }
+            
+            </style>
+          <div class="app">
+            <div class="gifs">
+              <img src="objetos/objeto2/img/olho.png" id="obj-olho-completo" alt="">
+              <img src="objetos/objeto2/img/anim01.gif" id="obj-cornea" alt="" style="display: none;">
+              <img src="objetos/objeto2/img/anim02.gif" id="obj-humor-aquoso" style="display: none;" alt="">
+              <img src="objetos/objeto2/img/anim03.gif" id="obj-iris" style="display: none;" alt="">
+              <img src="objetos/objeto2/img/anim04.gif" id="obj-cristalino" style="display: none;" alt="">
+              <img src="objetos/objeto2/img/anim05.gif" id="obj-humor-vitrio" style="display: none;" alt="">
+              <img src="objetos/objeto2/img/anim06.gif" id="obj-retina" style="display: none;" alt="">
+              <img src="objetos/objeto2/img/anim07.gif" id="obj-nervo-optico" style="display: none;" alt="">
+            </div>
+            <div class="textos">
+              <p id="txt-humor-vitrio" style="display: none">
+                <strong>Humor vítreo</strong> – Gel transparente que preenche o espaço entre a lente (cristalino) e a retina, mantendo a forma do globo ocular e auxiliando na transmissão da luz. 
+              </p>
+              <p id="txt-humor-aquoso" style="display: none">
+                O <strong>Humor aquoso</strong> reside na câmara anterior do olho, situada entre a face posterior da córnea e a face frontal da íris. Ele desempenha funções vitais, como regular a pressão intraocular, nutrir partes do olho sem vasos sanguíneos e auxiliar na refração da luz para a pupila e o cristalino
+              </p>
+              <p id="txt-cornea" style="display: none">
+                <strong>Córnea</strong> – É a parte transparente e convexa que fica na parte anterior do olho. Ela foca a luz que entra no olho e ajuda a formar uma imagem nítida na retina. 
+              </p>
+              <p id="txt-cristalino" style="display: none">
+                <strong>Cristalino</strong> – É uma lente natural flexível que fica atrás da íris e que ajuda a focar a luz na retina, permitindo que você veja objetos em diferentes distâncias. </p>
+
+              <p id="txt-retina" style="display: none">
+                <strong>Retina</strong> – Camada sensível à luz localizada na parte de trás do olho, na qual as imagens são formadas e convertidas em sinais elétricos, que depois são enviados ao cérebro pelo nervo óptico. </p>
+          
+              <p id="txt-iris" style="display: none">
+                <strong>Íris</strong> – É a parte colorida do olho, que controla o tamanho da pupila para regular a quantidade de luz que entra no olho. </p>
+          
+              <p id="txt-corpo-ciliar" style="display: none">
+                <strong>Corpo ciliar</strong> – Estrutura localizada atrás da íris e que produz o líquido aquoso, ajuda a focar o olho e regula a pressão intraocular. </p>
+          
+              <p id="txt-esclerotica" style="display: none">
+                <strong>Esclerótica</strong> – É a "casca" branca e resistente do olho, que fornece estrutura e proteção para o globo ocular. </p>
+          
+              <p id="txt-coroide" style="display: none">
+                <strong>Coroide</strong> – Camada vascularizada entre a retina e a esclerótica, que fornece nutrientes e oxigênio para a retina e para outras estruturas oculares. </p>
+          
+              <p id="txt-nervo-optico" style="display: none">
+                <strong>Nervo óptico</strong> – É o nervo responsável por transmitir sinais visuais do olho para o cérebro. Ele conecta a retina – em que as imagens visuais são formadas – ao cérebro, no qual esses sinais são interpretados como visão.
+              </p>
+            </div>
+            <div class="botoes">
+                <button type="button" id="btn-cornea" class="btn btn-primary obj-acao">Córnea</button>
+                <button type="button" id="btn-humor-aquoso" class="btn btn-primary obj-acao">Humor aquoso</button>
+                <button type="button" id="btn-iris" class="btn btn-primary obj-acao">Íris</button>
+                <button type="button" id="btn-cristalino" class="btn btn-primary obj-acao">Cristalino</button>
+                <button type="button" id="btn-humor-vitrio" class="btn btn-primary obj-acao">Humor vítreo</button>
+                <button type="button" id="btn-retina" class="btn btn-primary obj-acao">Retina</button>
+                
+                <button type="button" id="btn-corpo-ciliar" class="btn btn-primary obj-acao">Corpo ciliar</button>
+                <button type="button" id="btn-esclerotica" class="btn btn-primary obj-acao">Esclerótica</button>
+                <button type="button" id="btn-coroide" class="btn btn-primary obj-acao">Coroide</button>
+                <button type="button" id="btn-nervo-optico" class="btn btn-primary obj-acao">Nervo óptico</button>
+            </div>
+
+          </div>
+
+          <p>Que tal testar os seus conhecimentos sobre os processos de formação de imagens no sistema visual?</p>
+          <p class="text-center">
+            <button type="button" class="btn btn-lg btn-primary">
+              Testar conhecimentos
+            </button>
+          </p>
         </div>
 
-
+       
 
      
           <div class="btn-final no-print">
@@ -180,6 +272,30 @@
       }
     </style>
   </noscript>
+  <script>
+    $(function (){
+
+      $(".obj-acao").click(function(){
+        var id_radical = $(this).attr("id").split("btn-")[1];
+
+        $(".textos p").css("display", "none")
+        $(".gifs img").css("display", "none")
+        $("#txt-" + id_radical).css("display", "block")
+
+        switch(id_radical){
+          case "corpo-ciliar":
+          case "esclerotica":
+          case "coroide":
+          $("#obj-olho-completo").css("display", "block");
+          break;
+
+          default:
+          $("#obj-" + id_radical).css("display", "block");
+        }
+      })
+
+    })
+  </script>
 </body>
 
 </html>

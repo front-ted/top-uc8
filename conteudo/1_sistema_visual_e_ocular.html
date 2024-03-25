@@ -24,6 +24,9 @@
   <link href="css/aos.css" type="text/css" rel="stylesheet">
   <link href="css/01.css" type="text/css" rel="stylesheet">
   <link href="css/print.css" type="text/css" rel="stylesheet">
+  <!-- Estilos do visualizador -->
+  <link rel="stylesheet" href="objetos/olho3d/viewer_3d/css/viewer.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -81,9 +84,7 @@
         <p>
           Você conhecerá as camadas que revestem o globo, passando pela estrutura interna do fundo do olho, na qual ocorre a projeção das imagens. Também entenderá a importância do espaço vítreo, das câmaras posterior e anterior e dos anexos oculares, estudando por último o processamento da formação da visão no cérebro por meio do córtex visual. 
         </p>
-        <div class="espera seloPresencialidade  no-print">
-          Espera para objeto
-        </div>
+        
         <h3>Globo ocular</h3>
         <p>
           Os olhos são dois órgãos de aproximadamente 24 mm (milímetros) de diâmetro e 75 mm de circunferência, localizados em duas cavidades ósseas na parte frontal do crânio, estrutura denominada órbita ocular. 
@@ -539,20 +540,24 @@
         <p>
           Tal conhecimento, sem dúvidas, é de grande importância no ato de promover saúde visual para o candidato ao uso de lentes e assim, consequentemente, torna você capaz de transmitir maior confiabilidade profissional. 
         </p>
+
+        <p>
+          A visão é um dos sentidos mais importantes para os seres humanos, pois ela permite que as pessoas percebam o mundo ao seu redor.</p>
+
+<p>Confira a seguir um detalhamento do caminho que a luz percorre dentro do olho, desde a córnea até a formação da imagem na retina, e como essa informação visual é transmitida ao cérebro para interpretação. 
+        </p>
         <p class="no-print">Clique e arraste o mouse ou toque para explorar como é a estrutura de um olho humano. </p>
-        <div class="espera seloPresencialidade no-print">
-          Espera para objeto
-        </div>
-
-
-
-
         
-
-
-
-
-
+        <!-- seloPresencialidade -->
+        <div class="espera no-print">
+          <!-- model-viewer exemplo 01 -->
+          <model-viewer id="objeto01"  alt="Personagem"  reveal="interaction" camera-orbit="45deg 55deg 2.5m"  src="objetos/olho3d/viewer_3d/gltf/olho/Olho.gltf" ar ar-scale="auto" ar-modes="webxr scene-viewer quick-look" environment-image="" poster="objetos/olho3d/viewer_3d/gltf/poster.jpg" shadow-intensity="1"  camera-controls>
+           <div id="thumb-objeto01" slot="poster"></div>                  
+           <button slot="poster" class="btLoad"><i class="fas fa-cloud-download-alt"></i>Carregar o modelo 3D</button>
+           <button onclick="this.parentElement.requestFullscreen(); this.style.visibility = 'hidden'; this.parentElement.querySelector('.btExitFullScreen').style.visibility = 'visible'" class="btFullScreen" title="Tela cheia"> <i class="fas fa-expand"></i></button>
+           <button onclick="document.exitFullscreen(); this.style.visibility = 'hidden'; this.parentElement.querySelector('.btFullScreen').style.visibility = 'visible'" class="btExitFullScreen" title="Sair da tela cheia"> <i class="fas fa-compress"></i></button>
+       </model-viewer>
+     </div>
 
 
           <div class="btn-final no-print">
@@ -632,6 +637,17 @@
       }
     </style>
   </noscript>
+
+      <!--arquivo js necessario para o funcionamento do visualizador 3d-->
+      <script type="module" src="objetos/olho3d/viewer_3d/js/model-viewer.min.js"></script>
+
+      <!-- arquivo js responsavel pela funcionalidade de panning no modelo 3d-->
+      <script src="objetos/olho3d/viewer_3d/js/pan.js"></script>
+      
+      <script>
+        AddPan('#objeto01');
+   
+      </script>
 </body>
 
 </html>

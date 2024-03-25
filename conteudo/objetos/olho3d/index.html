@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+  <head>
+    <title>Visualizador 3d</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+ 
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Estilos do visualizador -->
+    <link rel="stylesheet" href="viewer_3d/css/viewer.css"> 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Jos� Renato dos Santos Pereira</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">577118000.000000</mso:Order>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Jos� Renato dos Santos Pereira</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:ContentTypeId msdt:dt="string">0x010100393332CEE5C5294F9D2C3CF7CCDACBE5</mso:ContentTypeId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+<mso:MediaLengthInSeconds msdt:dt="string"></mso:MediaLengthInSeconds>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+
+  <body class="bg-sesc">  
+
+    <header>
+      
+    </header>
+   
+    <section>
+       
+        <header>
+                              
+                        <h1>Visualizador de imagens em 3d (model-viewer)</h1>
+                  
+        </header>
+        <section>
+            <div class="container">
+                <p>O model-viewer é um visualizador de objetos 3d, que estejam no formato .gltf ou glb. Ele será utilizado como mais um recurso para o aprendizado dos alunos. Vamos utilizar uma versão que customizamos para nosso uso, atendendo a algumas necessidades especificas (possibilidade de fullscreen, carregamento do modelo via interação do aluno). Neste documento vamos detalhar a estrutura do visualizador, e como inserir o mesmo no conteúdo de um html.</p>
+                <p>Para interagir o visualizador propriamente dito, <a href="#exemplos-praticos" class="text-black"><strong>clique aqui para ir direto para o tópico de exemplos</strong></a>.</p>
+                <h3>Utilização do visualizador</h3>
+                <p>Para fazer uso do visualizador de objetos 3d, devemos adicionar os seguintes arquivos no html:</p>
+                <ul>
+                    <li>No head do documento o arquivo css: <strong>viewer_3d/css/viewer.css</strong></li>
+                </ul>
+              
+              
+                <p>Neste arquivo aplicamos os estilos dos elementos que compoem o player: bordas do player, botoes de fullscreen, botão de carregar o modelo 3d, barra de carregamento.</p>
+
+                
+                <ul>
+                    <li>No final do body (pode ser após a inicialização do bootstrap) o arquivo JS <strong>viewer_3d/js/model-viewer.min.js</strong></li>
+                    <li><strong>Opcional:</strong> Para a funcionalidade de panning na camera, devemos adicionar mais um arquivo js após a declaração da bibliboteca do model-viewer. Vamos adicionar o arquivo js <strong>viewer_3d/js/pan.js</strong>, e logo após adicionamos mais uma tag de script fazendo a chamada para a função <strong>AddPan</strong> passando por parameto o id do viewer que desejarmos a função de pan da camera habilitada</li>
+                </ul>
+                <p>Esta biblioteca que cria o visualizador e suas funcionalidades.</p>
+
+                <h3>Estrutura html a ser incorporada</h3>
+                <p>Devemos inserir a seguinte estrutura no conteudo em html para colocar o visualizador:</p>
+               
+                    <code>
+                       <pre>
+&lt;model-viewer id="objeto01" alt="Personagem" reveal="interaction" camera-orbit="45deg 55deg 2.5m" src="viewer_3d/gltf/personagem.glb" ar ar-scale="auto" ar-modes="webxr scene-viewer quick-look" environment-image="" poster="viewer_3d/gltf/poster.png" seamless-poster shadow-intensity="1" skybox-image="viewer_3d/gltf/je_gray_park_1k.hdr" camera-controls&gt;
+    &lt;div id="thumb-objeto01" slot="poster"&gt;&lt;/div&gt;
+    &lt;button slot="poster" class="btn-sesc btLoad"&gt;&lt;i class="fas fa-cloud-download-alt"&gt;&lt;/i&gt;Carregar o modelo 3D&lt;/button&gt;
+    &lt;button onclick="this.parentElement.requestFullscreen(); this.style.visibility = 'hidden'; this.parentElement.querySelector('.btExitFullScreen').style.visibility = 'visible'" class="btFullScreen" title="Tela cheia"&gt; &lt;i class="fas fa-expand"&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;button onclick="document.exitFullscreen(); this.style.visibility = 'hidden'; this.parentElement.querySelector('.btFullScreen').style.visibility = 'visible'" class="btExitFullScreen" title="Sair da tela cheia"&gt; &lt;i class="fas fa-compress"&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;/model-viewer&gt;
+                        </pre>                           
+                    </code>
+
+                <h3>Atributos da tag model-viewer</h3>
+                <p>Vejamos as funções dos atributos da tag model-viewer:</p>
+                <ul>
+                    <li><strong>alt</strong>: texto alternativo caso não carregue o modelo</li>
+                    <li><strong>reveal="interaction"</strong>: Este atributo faz com que o modelo seja carregamento somente ao clicar no botão de carregar</li>
+                    <li><strong>ar</strong>: Este atributo permite que o modelo seja colocado no ambiente usando a camera de celulares que suportam a tecnologia ar</li>
+                    <li><strong>ar-scale='auto':</strong> Permite ao usuário redimensionar o objeto em ar no celular usando pinch</li>
+                    <li><strong>camera-orbit:</strong> Neste atributo definimos a posição inicial da camera ao carregar o modelo, em graus, bem como a distancia da camera.(no exemplo: 45deg 55deg 2.5m)</li>
+                    <li><strong>src:</strong> Local onde está o arquivo do modelo 3d a ser carregado(os arquivos serao do tipo .gltf ou .glb</li>
+                    <li><strong>ar-modes="webxr scene-viewer quick-look":</strong> Configurações gerais do modo ar</li>
+                    <li><strong>environment-image</strong>: Define uma imagem a ser usada como iluminação ambiente, no nosso caso deixaremos em branco para utilizar o padrao do visualizador</li>
+                    <li><strong>poster="viewer_3d/gltf/poster.png</strong>: A imagem definida aqui será exibida enquanto o objeto for carregado, só é mostrada quando configuramos o player pra carregar automático(sem o botão de load)</li>
+                    <li><strong>seamless-poster</strong> desabilita a transição do thumb para o modelo, quando os dois estiverem na mesma posiçao e angulo</li>
+                    <li><strong>shadow-intensity="1":</strong> Intensidade da sombra, varia entre 0 e 1</li>
+                    <li><strong>skybox-image</strong>: Se definido, carrega uma imagem de skybox para o fundo do objeto</li>
+                    <li><strong>camera-controls</strong>: para o usuário conseguir controlar o movimento da camera ao redor do personagem com o touch ou o mouse</li>                  
+                </ul>
+
+                <h3>Tags dentro do model-viewer</h3>
+                <p>Na estrutura que vamos utilizar, existem algumas tags com funcionalidade para o viewer, vejamos:</p>
+
+                <ul>
+                    <li><strong>&lt;div id="thumb-objeto01" slot="poster"&gt;&lt;/div&gt;</strong>: Essa tag que exibe a imagem de poster do viewer enquanto o modelo não tiver sido carregado. A imagem é definida pelo diagramador via css, utilizando o id que iremos atribuir ou uma classe css. É importante que tenha o atributo slot="poster" definido, pois é o que diz ao viewer que o elemento será removido após o carregamento do modelo.</li>
+                    <li><strong>    &lt;button slot="poster" class="btLoad"&gt;&lt;i class="fas fa-cloud-download-alt"&gt;&lt;/i&gt;Carregar o modelo 3D&lt;/button&gt;</strong>: É o botão que inicia o carregamento do modelo 3d, pode ser totalmente customizado via css,ou também pode ser  utilizado com a classe dos botões do template(basta remover a classe btLoad pra limpar os estilos). Também deve ter o atributo slot="poster" para o mesmo sumir após o modelo carregar.</li>
+                    <li>Botão: <strong style="word-break: break-all;">&lt;button onclick="this.parentElement.requestFullscreen(); this.style.visibility = 'hidden'; this.parentElement.querySelector('.btExitFullScreen').style.visibility = 'visible'" class="btFullScreen" title="Tela cheia"&gt; &lt;i class="fas fa-expand"&gt;&lt;/i&gt;&lt;/button&gt;</strong>: botão responsável pelo fullscreen, pode ser customizado via css, foi utilizado fontawesome 5 para o ícone.</li>
+                    <li>Botão: <strong style="word-break: break-all;">&lt;button onclick="document.exitFullscreen(); this.style.visibility = 'hidden'; this.parentElement.querySelector('.btFullScreen').style.visibility = 'visible'" class="btExitFullScreen" title="Sair da tela cheia"&gt; &lt;i class="fas fa-compress"&gt;&lt;/i&gt;&lt;/button&gt;</strong>: botão responsável por sair do fullscreen, aparece depois de ir para o fullscreen, substituindo o botão que inicia o fullscreen. Também configuravel via css.</li>
+                </ul>
+
+                <p>Os ícones dos botões do nosso visualizador utilizam o fontawesome, então é bom certificar-se que o conteúdo que o model-viewer será incorporado possui o fontawesome linkado corretamente.</p>
+                    
+                <h3>Documentação extra:</h3>
+                <p>Para mais sobre outros recursos do model-viewer, vale a pena conferir a documentação em: <a href="https://modelviewer.dev/docs/index.html" target="_blank">model-viewer: exemplos e documentação</a></p>
+                
+                <p>A seguir temos 2 exemplos de modelos 3d carregados no visualizador.</p>    
+                
+
+                <h2 id="exemplos-praticos">Exemplos práticos</h2>
+                <h3>Exemplo com o atributo skybox-image definido</h3>
+                <p>O skybox influencia diretamente na iluminação do objeto que será carregado</p>
+                <!-- model-viewer exemplo 01 -->
+                <model-viewer id="objeto01"  alt="Personagem"  reveal="interaction" camera-orbit="45deg 55deg 2.5m"  src="viewer_3d/gltf/personagem.glb" ar ar-scale="auto" ar-modes="webxr scene-viewer quick-look" environment-image="" poster="viewer_3d/gltf/poster.png" shadow-intensity="1" skybox-image="viewer_3d/gltf/je_gray_park_1k.hdr" camera-controls>
+                    <div id="thumb-objeto01" slot="poster"></div>                  
+                    <button slot="poster" class="btLoad"><i class="fas fa-cloud-download-alt"></i>Carregar o modelo 3D</button>
+                    <button onclick="this.parentElement.requestFullscreen(); this.style.visibility = 'hidden'; this.parentElement.querySelector('.btExitFullScreen').style.visibility = 'visible'" class="btFullScreen" title="Tela cheia"> <i class="fas fa-expand"></i></button>
+                    <button onclick="document.exitFullscreen(); this.style.visibility = 'hidden'; this.parentElement.querySelector('.btFullScreen').style.visibility = 'visible'" class="btExitFullScreen" title="Sair da tela cheia"> <i class="fas fa-compress"></i></button>
+                </model-viewer>
+
+                <h3>Exemplo com o atributo skybox-image em branco</h3>
+                <p>A cor de fundo do viewer pode ser alterada via css, trocando o background-color da tag model-viewer, adicionando uma classe a tag ou até mesmo pelo atributo de style.</p>
+                <p>É possivel tbm adicionar uma imagem de background ao player da mesma forma.</p>
+                
+                <!-- model-viewer exemplo 02 -->
+                <model-viewer id="objeto02"  alt="Personagem" reveal="interaction" camera-orbit="45deg 55deg 2.5m"  src="viewer_3d/gltf/cadeira.glb" ar ar-scale="auto" ar-modes="webxr scene-viewer quick-look" environment-image="" poster="viewer_3d/gltf/poster02.png" seamless-poster shadow-intensity="1" skybox-image="" camera-controls>
+                    <div id="thumb-objeto02" slot="poster"></div>                  
+                    <button slot="poster" class="btLoad"><i class="fas fa-cloud-download-alt"></i>Carregar o modelo 3D</button>
+                    <button onclick="this.parentElement.requestFullscreen(); this.style.visibility = 'hidden'; this.parentElement.querySelector('.btExitFullScreen').style.visibility = 'visible'" class="btFullScreen" title="Tela cheia"> <i class="fas fa-expand"></i></button>
+                    <button onclick="document.exitFullscreen(); this.style.visibility = 'hidden'; this.parentElement.querySelector('.btFullScreen').style.visibility = 'visible'" class="btExitFullScreen" title="Sair da tela cheia"> <i class="fas fa-compress"></i></button>
+                </model-viewer>              
+                
+                <h3>Funcionalidade da panning (deslizar o modelo pela tela)</h3>
+                <p>Para a funcionalidade de panning na camera do viewer devemos linkar o arquivo <strong>viewer_3d/js/pan.js</strong> no final do documento, após a declaração do model-viewer.min.js</p>
+<pre>
+  <code>
+      &lt;script src="viewer_3d/js/pan.js">&lt;/script>
+  </code>
+</pre>
+            
+              <p>Depois adicionamos uma tag de script, com a chamada de função <strong>AddPan</strong> passando por parametro o id do viewer que desejamos que tenha a funcionalidade habilitada:</p>
+              <p><strong>Exemplo (o codigo abaixo adiciona a funcionalidade de pan na camera dos dois objetos declarados na página):</strong></p>
+
+<pre>
+  <code>
+    &lt;script>
+      AddPan('#objeto01');
+      AddPan('#objeto02');
+    &lt;/script>
+  </code>
+</pre>
+
+            <h3>Atalhos da função de panning da camera</h3>
+            <p><strong>No desktop:</strong> A função de pan pode ser acionada segurando a tecla <strong>shift</strong> , ou com <strong>um click rápido</strong> do botão esquedo do mouse no local do modelo 3d em que desejar mover a camera.</p>
+            <p><strong>No mobile:</strong> Arrastar com dois dedos na tela faz o efeito de pan no modelo. Ou também um toque unico na parte do modelo que deseja mover a camera.</p>
+
+            </div>
+        </section>  
+    </section>
+
+    <!--arquivo js necessario para o funcionamento do visualizador 3d-->
+    <script type="module" src="viewer_3d/js/model-viewer.min.js"></script>
+
+    <!-- arquivo js responsavel pela funcionalidade de panning no modelo 3d-->
+    <script src="viewer_3d/js/pan.js"></script>
+    
+    <script>
+      AddPan('#objeto01');
+      AddPan('#objeto02');     
+    </script>
+    
+</body>
+</html>
