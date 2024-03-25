@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fa/css/all.min.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOP UC8 - Quiz</title>
+
+    <!-- Trocar -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo+Narrow:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body onLoad="Javascript:document.getElementById('sncloader').style.display='none';">
+    <div id='sncloader' class='over-loader'><div class="over-cell"><div id="sncload"></div></div></div>
+    <header id="topo" class="senac no-print position-relative">
+        <div class="header-tecnicos container">
+        	  <h1 id="nome-curso">Técnico em Óptica</h1>
+            <div id="logo-senac"><img src="img/logo-senac.png" alt="logo do senac"></div>
+        </div>
+        <div id="sombra"></div>
+    </header>
+
+
+
+<!-- Modal Body -->
+<!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+ <div
+    class="modal fade"
+    id="intro"
+    tabindex="-1"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    
+    role="dialog"
+    aria-labelledby="modalTitleId"
+    aria-hidden="true"
+>
+    <div
+        class="modal-dialog modal-dialog-scrollable modal-dialog-centered "
+        role="document"
+    >
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitleId">
+                    Introdução
+                </h5>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                ></button>
+            </div>
+            <div class="modal-body">
+                <p>Bem-vindo ao <i>quiz</i> sobre o sistema visual!  </p>
+
+                <p>Prepare-se para testar seus conhecimentos e aprender mais sobre como o sistema visual funciona. Boa sorte! </p>
+            </div>
+            <div class="modal-footer">
+                <button
+                    type="button"
+                    class="btn btn-warning"
+                    data-bs-dismiss="modal"
+                >
+                    Responder as perguntas
+                </button>
+       
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <div id="top-quiz">
+        <div id="top-slides">
+        </div>
+        <div class="top-slide-final mt-5" style="display:none;">
+            <div class="pergunta pt-5 pb-5 mb-5">
+                <p>O número de respostas corretas foi de:</p>
+                <p id="contador"><span id="acertos">0</span>/<span id="total">0</span></p>
+                <div class="mensagemfinal">
+                    
+                </div>
+                <nav class="text-center pt-4">
+                    <button class="bto-nav-reiniciar" type="button">Reiniciar</button>
+                </nav>
+<br>
+<!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+                      <div class="carousel-item active text-start pl-5 pr-5">
+                        <h2>1. Lentes esféricas centradas </h2>
+                        <strong><p class="text-start">O que são? </p></strong>
+                        <p class="text-start">São lentes cujo centro óptico coincide com as medidas oculares do usuário. </p>
+                        <strong><p class="text-start">Como funcionam? </p></strong>
+                        <p class="text-start">Refratam a luz de maneira uniforme, proporcionando uma correção visual básica para problemas como miopia ou hipermetropia. </p>
+                      </div>
+                      <div class="carousel-item text-start pl-5 pr-5">
+                        <h2>2. Lentes esféricas descentradas </h2>
+                        <strong><p class="text-start">O que são? </p></strong>
+                        <p class="text-start">São lentes fabricadas com o objetivo de coincidir o centro óptico com as medidas oculares do usuário. </p>
+                        <strong><p class="text-start">Como funcionam? </p></strong>
+                        <p class="text-start">São usadas para corrigir problemas visuais específicos que não podem ser tratados eficientemente com lentes centradas. </p>
+                      </div>
+                      <div class="carousel-item text-start pl-5 pr-5">
+                        <h2>3. Lentes cilíndricas centradas </h2>
+                        <strong><p class="text-start">O que são? </p></strong>
+                        <p class="text-start">Lentes que contêm duas curvaturas diferentes, uma em cada meridiano, usadas para corrigir astigmatismo. </p>
+                        <strong><p class="text-start">Como funcionam? </p></strong>
+                        <p class="text-start">Corrigem distorções visuais causadas por irregularidades na curvatura da córnea ou do cristalino. </p>
+                      </div>
+                      <div class="carousel-item text-start pl-5 pr-5">
+                        <h2>4. Lentes cilíndricas descentradas </h2>
+                        <strong><p class="text-start">O que são? </p></strong>
+                        <p class="text-start">São similares às lentes cilíndricas centradas, mas não estão perfeitamente alinhadas no centro e são fabricadas com o objetivo de coincidir o centro óptico com as medidas oculares do usuário. </p>
+                        <strong><p class="text-start">Como funcionam? </p></strong>
+                        <p class="text-start">São utilizadas quando é necessário corrigir astigmatismo e lidar com outras questões visuais simultaneamente. </p>
+                      </div>
+                      <div class="carousel-item text-start pl-5 pr-5">
+                        <h2>5. Lentes prismáticas? </h2>
+                        <strong><p class="text-start">O que são? </p></strong>
+                        <p class="text-start">Lentes que contêm um excesso de descentração para corrigir problemas de alinhamento dos olhos, como estrabismo. </p>
+                        <strong><p class="text-start">Como funcionam? </p></strong>
+                        <p class="text-start">Alteram a direção da luz para corrigir a posição dos olhos, proporcionando alívio ao paciente. </p>
+                      </div>
+                      <div class="carousel-item text-start pl-5 pr-5">
+                        <h2>6. Lentes bifocais </h2>
+                        <strong><p class="text-start">O que são? </p></strong>
+                        <p class="text-start">Lentes que atendem a duas distâncias focais simultaneamente, para quem tem presbiopia. Contêm uma película visível com o grau de perto na base inferior das lentes e a alternância entre as duas distâncias focais causa um salto de imagem. </p>
+                        <p>Como  class="text-start"funcionam? </p>
+                        <p class="text-start">O usuário pode olhar através da parte superior para visão de longe e pela parte inferior para visão de perto.             </p>
+                      </div>
+                      <div class="carousel-item text-start pl-5 pr-5">
+                        <h2>7. Lentes multifocais </h2>
+                        <strong><p class="text-start">O que são? </p></strong>
+                        <p class="text-start">Lentes que incorporam mais de duas áreas de correção, frequentemente usadas para corrigir visão de perto, intermediária e de longe. </p>
+                        <strong><p class="text-start">Como funcionam? </p></strong>
+                        <p class="text-start">Eliminam a necessidade de trocas entre diferentes óculos para diferentes distâncias de visão. </p>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                  </div> -->
+                  
+            </div>
+            
+        </div>
+        
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-6 text-center">
+            
+                    <button type="button" class="bto-nav" data-bs-toggle="modal" data-bs-target="#intro" >
+                        Introdução
+                    </button>
+                </div>
+                <div class="col-6 text-center">
+                    <nav id="navegacao" style="display: none;"> 
+                        <button class="bto-nav bto-nav-acao" type="button">Avançar</button>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/perguntas.js"></script>
+    <script src="js/quiz.js"></script>
+
+    <script>
+        $(document).ready(function() {
+    $('#intro').modal('show');
+})
+    </script>
+</body>
+</html>
