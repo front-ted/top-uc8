@@ -217,7 +217,7 @@ var perguntas = [
             {
                 botao: "a",
                 validacao: false,
-                texto: "Córtex visual"
+                texto: "Cristalino"
             },
             {
                 botao: "b",
